@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -21,8 +23,12 @@ a {
   text-decoration: none;
 }
 
-/* Navigation */
+/* Navigation — sticky, consistent across all pages */
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -50,18 +56,14 @@ a {
   overflow: hidden;
 }
 
-.hero-blob {
+.hero-cloud {
   position: absolute;
-  width: 620px;
-  height: 440px;
-  background: radial-gradient(ellipse at 40% 40%, rgba(0, 230, 200, 0.45) 0%, rgba(0, 210, 190, 0.3) 20%, rgba(100, 240, 220, 0.2) 40%, rgba(180, 255, 245, 0.1) 60%, transparent 80%),
-              radial-gradient(ellipse at 70% 50%, rgba(0, 200, 180, 0.35) 0%, rgba(50, 220, 200, 0.2) 30%, transparent 65%),
-              radial-gradient(ellipse at 50% 60%, rgba(100, 245, 230, 0.25) 0%, rgba(150, 250, 240, 0.1) 40%, transparent 70%);
-  filter: blur(30px);
-  border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 700px;
+  height: auto;
+  pointer-events: none;
 }
 
 .hero-logo {
@@ -94,7 +96,7 @@ a {
   font-size: 26px;
   letter-spacing: -0.27px;
   color: #000;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.55;
 }
 
@@ -134,17 +136,14 @@ a {
   overflow: hidden;
 }
 
-.dream-blob {
+.dream-cloud {
   position: absolute;
-  width: 280px;
-  height: 320px;
-  background: radial-gradient(ellipse at 50% 40%, rgba(0, 230, 200, 0.4) 0%, rgba(0, 210, 190, 0.25) 25%, rgba(100, 240, 220, 0.15) 45%, rgba(180, 255, 245, 0.05) 65%, transparent 85%),
-              radial-gradient(ellipse at 55% 60%, rgba(0, 200, 180, 0.3) 0%, rgba(50, 220, 200, 0.15) 35%, transparent 70%);
-  filter: blur(25px);
-  border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 500px;
+  height: auto;
+  pointer-events: none;
 }
 
 .dream-line-1 {
@@ -240,13 +239,16 @@ a {
 .footer-right {
   display: flex;
   gap: 24px;
+  align-items: flex-end;
 }
 
 .footer-link {
-  font-family: 'Instrument Serif', serif;
-  font-size: 11px;
-  color: #888;
-  letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #828282;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
 .footer-link:hover {
@@ -267,16 +269,13 @@ a {
   overflow: hidden;
 }
 
-.contact-blob {
+.contact-cloud {
   position: absolute;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(ellipse at 50% 50%, rgba(0, 230, 210, 0.5) 0%, rgba(0, 215, 195, 0.35) 20%, rgba(80, 240, 225, 0.2) 40%, rgba(160, 255, 245, 0.08) 60%, transparent 80%),
-              radial-gradient(ellipse at 30% 40%, rgba(0, 210, 190, 0.4) 0%, rgba(50, 225, 210, 0.2) 30%, transparent 65%);
-  filter: blur(40px);
-  border-radius: 45% 55% 50% 50% / 50% 45% 55% 50%;
   top: -10%;
-  left: -20%;
+  left: -10%;
+  width: 700px;
+  height: auto;
+  pointer-events: none;
 }
 
 .contact-email {
