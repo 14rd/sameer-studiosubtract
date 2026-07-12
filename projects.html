@@ -50,10 +50,12 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script>
     if (window.innerWidth > 768) {
-      const scroll = new LocomotiveScroll({ el: document.querySelector('body'), smooth: true, lerp: 0.08 });
+      let current = window.scrollY, target = window.scrollY, raf;
+      const lerp = (a, b, t) => a + (b - a) * t;
+      window.addEventListener('wheel', e => { e.preventDefault(); target += e.deltaY; target = Math.max(0, Math.min(target, document.body.scrollHeight - window.innerHeight)); }, { passive: false });
+      (function update() { current = lerp(current, target, 0.08); if (Math.abs(current - target) > 0.5) window.scrollTo(0, current); raf = requestAnimationFrame(update); })();
     }
   </script>
 </body>

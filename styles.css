@@ -15,12 +15,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html.has-scroll-smooth {
-  overflow: hidden;
-}
-
-html.has-scroll-smooth body {
-  overflow: hidden;
+@media (min-width: 769px) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
