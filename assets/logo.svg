@@ -1,0 +1,8 @@
+<svg viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;display=swap');
+    text { font-family: 'Instrument Serif', serif; fill: white; }
+  </style>
+  <text x="50%" y="42" text-anchor="middle" font-size="52" font-style="italic" letter-spacing="-1">LAST SEEN</text>
+  <text x="50%" y="88" text-anchor="middle" font-size="52" font-style="italic" letter-spacing="-1">DREAMING</text>
+</svg>
