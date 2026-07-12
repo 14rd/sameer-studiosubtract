@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Last Seen Dreaming</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,8 +11,9 @@
 </head>
 <body>
 
-  <!-- Blur gradient behind nav -->
+  <!-- Blur gradients -->
   <div class="nav-blur"></div>
+  <div class="bottom-blur"></div>
 
   <!-- Navigation -->
   <nav class="nav">
@@ -88,5 +89,11 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+  <script>
+    if (window.innerWidth > 768) {
+      const scroll = new LocomotiveScroll({ el: document.querySelector('body'), smooth: true, lerp: 0.08 });
+    }
+  </script>
 </body>
 </html>
