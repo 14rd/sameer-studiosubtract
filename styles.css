@@ -30,6 +30,11 @@ a {
   text-decoration: none;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
 /* Navigation — sticky, consistent across all pages */
 .nav {
   position: sticky;
@@ -101,15 +106,16 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 .hero-cloud {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -45%);
-  width: 70%;
+  transform: translate(-50%, -40%);
+  width: 100%;
+  min-width: 100%;
   height: auto;
   pointer-events: none;
 }
@@ -127,7 +133,7 @@ a {
 /* About */
 .about {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 100px 20px 60px;
   max-width: 760px;
   margin: 0 auto;
 }
@@ -150,7 +156,7 @@ a {
 
 /* Clients */
 .clients {
-  padding: 20px 0 50px;
+  padding: 20px 0 80px;
   max-width: 620px;
   margin: 0 auto;
 }
@@ -170,16 +176,15 @@ a {
 }
 
 .client-logo {
-  font-family: 'Instrument Serif', serif;
-  font-size: 14px;
-  color: #CACACA;
-  letter-spacing: 0.5px;
+  height: 18px;
+  width: auto;
+  opacity: 0.2;
 }
 
 /* Dream Text */
 .dream-text {
   position: relative;
-  padding: 120px 100px 140px;
+  padding: 140px 100px 160px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -220,7 +225,7 @@ a {
 /* Projects on home page */
 .projects {
   text-align: center;
-  padding: 40px 20px 100px;
+  padding: 60px 20px 120px;
 }
 
 .projects-heading {
@@ -252,8 +257,24 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.3) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.3) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  filter: blur(0px);
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  border-radius: 42% 58% 45% 55% / 50% 45% 55% 50%;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  pointer-events: none;
 }
 
 .project-card:nth-child(2) .project-img {
@@ -326,9 +347,11 @@ a {
    ======================== */
 
 .contact-page {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 72px);
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,9 +360,9 @@ a {
 
 .contact-cloud {
   position: absolute;
-  top: -20%;
-  left: -25%;
-  width: 1000px;
+  top: -15%;
+  left: -30%;
+  width: 90%;
   height: auto;
   pointer-events: none;
 }
@@ -514,14 +537,14 @@ a {
     height: 63px;
   }
 
-  /* Rev 8: hero text smaller */
+  /* Rev 7: about text — 2 lines, smaller */
   .about-light,
   .about-bold {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .about {
-    padding: 60px 20px 30px;
+    padding: 50px 28px 30px;
   }
 
   /* Dream text mobile */
@@ -538,11 +561,16 @@ a {
     width: 320px;
   }
 
-  /* Rev 6: 2 project cards on mobile, same size as desktop */
+  /* Rev 6: 2 project cards side by side on mobile */
   .projects-grid {
-    flex-wrap: wrap;
-    gap: 30px;
+    flex-wrap: nowrap;
+    gap: 16px;
     justify-content: center;
+  }
+
+  .project-card {
+    width: 140px;
+    height: 140px;
   }
 
   .project-card:nth-child(3) {
@@ -569,15 +597,20 @@ a {
     align-items: flex-end;
   }
 
-  /* Contact page mobile */
+  /* Rev 4: Contact page mobile — cloud big, towards bottom */
+  .contact-page {
+    top: 72px;
+  }
+
   .contact-cloud {
-    width: 140%;
-    left: -40%;
-    top: -15%;
+    width: 160%;
+    left: -30%;
+    top: auto;
+    bottom: -20%;
   }
 
   .contact-email {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   /* Clients mobile */
