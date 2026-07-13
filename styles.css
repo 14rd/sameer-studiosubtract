@@ -23,6 +23,7 @@ html {
 
 body {
   overflow-x: hidden;
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 a {
@@ -54,17 +55,26 @@ a {
 /* Blur gradient behind sticky nav — blurs content scrolling underneath */
 .nav-blur {
   position: fixed;
-  top: -1px;
+  top: 0;
   left: 0;
   right: 0;
   height: 161px;
-  padding-top: 1px;
   z-index: 99;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
+}
+
+.nav-blur::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * env(safe-area-inset-top, 0px));
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top, 0px);
+  background: #fff;
 }
 
 /* Bottom blur */
@@ -91,7 +101,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .hero-cloud {
@@ -99,11 +109,9 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -45%);
-  width: 100%;
-  min-width: 100%;
+  width: 70%;
   height: auto;
   pointer-events: none;
-  object-fit: cover;
 }
 
 .hero-logo {
@@ -112,8 +120,8 @@ a {
 }
 
 .logo-img {
-  width: 293px;
-  height: 129px;
+  width: 205px;
+  height: 90px;
 }
 
 /* About */
@@ -172,7 +180,6 @@ a {
 .dream-text {
   position: relative;
   padding: 120px 100px 140px;
-  overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -205,10 +212,9 @@ a {
   z-index: 1;
   font-size: 22px;
   letter-spacing: -0.14px;
-  color: #8a9a9a;
+  color: #000;
   text-align: right;
   padding-right: 20px;
-  mix-blend-mode: multiply;
 }
 
 /* Projects on home page */
@@ -331,9 +337,9 @@ a {
 
 .contact-cloud {
   position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 700px;
+  top: -20%;
+  left: -25%;
+  width: 1000px;
   height: auto;
   pointer-events: none;
 }
@@ -483,4 +489,105 @@ a {
 
 .project-nav-link:hover {
   opacity: 0.6;
+}
+
+/* ========================
+   MOBILE
+   ======================== */
+
+@media (max-width: 768px) {
+
+  /* Rev 5: cloud bigger and lower on mobile */
+  .hero {
+    height: 420px;
+    margin-top: 20px;
+  }
+
+  .hero-cloud {
+    width: 200%;
+    transform: translate(-50%, -42%);
+  }
+
+  /* Rev 5: logo 30% smaller on mobile */
+  .logo-img {
+    width: 144px;
+    height: 63px;
+  }
+
+  /* Rev 8: hero text smaller */
+  .about-light,
+  .about-bold {
+    font-size: 20px;
+  }
+
+  .about {
+    padding: 60px 20px 30px;
+  }
+
+  /* Dream text mobile */
+  .dream-text {
+    padding: 80px 30px 100px;
+  }
+
+  .dream-line-1,
+  .dream-line-2 {
+    font-size: 18px;
+  }
+
+  .dream-cloud {
+    width: 320px;
+  }
+
+  /* Rev 6: 2 project cards on mobile, same size as desktop */
+  .projects-grid {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .project-card:nth-child(3) {
+    display: none;
+  }
+
+  /* Rev 7: mobile footer */
+  .footer {
+    padding: 40px 24px 30px;
+    align-items: flex-end;
+  }
+
+  .footer-logo {
+    display: none;
+  }
+
+  .footer-left {
+    gap: 0;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+
+  /* Contact page mobile */
+  .contact-cloud {
+    width: 140%;
+    left: -40%;
+    top: -15%;
+  }
+
+  .contact-email {
+    font-size: 22px;
+  }
+
+  /* Clients mobile */
+  .clients {
+    padding: 15px 0 40px;
+  }
+
+  .clients-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+  }
 }
