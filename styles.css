@@ -111,7 +111,7 @@ a {
 
 .hero-cloud {
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -40%);
   width: 100%;
@@ -133,13 +133,13 @@ a {
 /* About */
 .about {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 220px 20px 60px;
   max-width: 760px;
   margin: 0 auto;
 }
 
 .about-light {
-  font-size: 26px;
+  font-size: 30px;
   letter-spacing: -0.27px;
   color: #959595;
   line-height: 1.55;
@@ -147,7 +147,7 @@ a {
 }
 
 .about-bold {
-  font-size: 26px;
+  font-size: 30px;
   letter-spacing: -0.27px;
   color: #000;
   font-weight: 400;
@@ -176,7 +176,7 @@ a {
 }
 
 .client-logo {
-  height: 18px;
+  height: 24px;
   width: auto;
   opacity: 0.2;
 }
@@ -184,7 +184,7 @@ a {
 /* Dream Text */
 .dream-text {
   position: relative;
-  padding: 140px 100px 160px;
+  padding: 50px 100px 30px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -197,16 +197,16 @@ a {
   width: 420px;
   height: auto;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .dream-line-1 {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   font-size: 22px;
   letter-spacing: -0.14px;
   color: #353535;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
   text-align: left;
   padding-left: 20px;
   mix-blend-mode: multiply;
@@ -214,7 +214,7 @@ a {
 
 .dream-line-2 {
   position: relative;
-  z-index: 1;
+  z-index: 0;
   font-size: 22px;
   letter-spacing: -0.14px;
   color: #000;
@@ -252,14 +252,13 @@ a {
 .project-img {
   width: 100%;
   height: 100%;
-  border-radius: 42% 58% 45% 55% / 50% 45% 55% 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-  filter: blur(0px);
+  clip-path: url(#cloud-shape-1);
 }
 
 .project-card::after {
@@ -269,20 +268,22 @@ a {
   left: 0;
   right: 0;
   height: 60%;
-  border-radius: 42% 58% 45% 55% / 50% 45% 55% 50%;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
   mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
   pointer-events: none;
+  clip-path: url(#cloud-shape-1);
 }
 
-.project-card:nth-child(2) .project-img {
-  border-radius: 50% 50% 45% 55% / 55% 48% 52% 45%;
+.project-card:nth-child(2) .project-img,
+.project-card:nth-child(2)::after {
+  clip-path: url(#cloud-shape-2);
 }
 
-.project-card:nth-child(3) .project-img {
-  border-radius: 45% 55% 50% 50% / 48% 52% 48% 52%;
+.project-card:nth-child(3) .project-img,
+.project-card:nth-child(3)::after {
+  clip-path: url(#cloud-shape-3);
 }
 
 .project-label {
@@ -355,16 +356,18 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .contact-cloud {
   position: absolute;
-  top: -15%;
-  left: -30%;
-  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -45%);
+  width: 75%;
+  max-height: 90%;
   height: auto;
   pointer-events: none;
+  object-fit: contain;
 }
 
 .contact-email {
@@ -418,17 +421,17 @@ a {
 .project-cover-img {
   width: 100%;
   height: 100%;
-  border-radius: 42% 58% 45% 55% / 50% 45% 55% 50%;
+  clip-path: url(#cloud-shape-1);
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.2) 100%);
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.2) 100%);
 }
 
 .project-cover:nth-child(2) .project-cover-img {
-  border-radius: 50% 50% 45% 55% / 55% 48% 52% 45%;
+  clip-path: url(#cloud-shape-2);
 }
 
 .project-cover:nth-child(3) .project-cover-img {
-  border-radius: 45% 55% 50% 50% / 48% 52% 48% 52%;
+  clip-path: url(#cloud-shape-3);
 }
 
 .project-cover-label {
@@ -537,19 +540,18 @@ a {
     height: 63px;
   }
 
-  /* Rev 7: about text — 2 lines, smaller */
   .about-light,
   .about-bold {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .about {
-    padding: 50px 28px 30px;
+    padding: 120px 28px 30px;
   }
 
   /* Dream text mobile */
   .dream-text {
-    padding: 80px 30px 100px;
+    padding: 30px 30px 20px;
   }
 
   .dream-line-1,
@@ -603,10 +605,11 @@ a {
   }
 
   .contact-cloud {
-    width: 160%;
-    left: -30%;
+    width: 130%;
+    left: auto;
     top: auto;
-    bottom: -20%;
+    bottom: 0;
+    transform: translate(-10%, 10%);
   }
 
   .contact-email {
