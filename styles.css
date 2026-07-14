@@ -133,8 +133,8 @@ a {
 /* About */
 .about {
   text-align: center;
-  padding: 220px 20px 60px;
-  max-width: 760px;
+  padding: 300px 20px 100px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -156,8 +156,8 @@ a {
 
 /* Clients */
 .clients {
-  padding: 20px 0 80px;
-  max-width: 620px;
+  padding: 20px 0 120px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
@@ -176,15 +176,16 @@ a {
 }
 
 .client-logo {
-  height: 24px;
+  height: 30px;
   width: auto;
-  opacity: 0.2;
+  opacity: 0.55;
+  filter: grayscale(1);
 }
 
 /* Dream Text */
 .dream-text {
   position: relative;
-  padding: 50px 100px 30px;
+  padding: 70px 100px 60px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -206,7 +207,7 @@ a {
   font-size: 22px;
   letter-spacing: -0.14px;
   color: #353535;
-  margin-bottom: 200px;
+  margin-bottom: 160px;
   text-align: left;
   padding-left: 20px;
   mix-blend-mode: multiply;
@@ -225,27 +226,27 @@ a {
 /* Projects on home page */
 .projects {
   text-align: center;
-  padding: 60px 20px 120px;
+  padding: 100px 20px 160px;
 }
 
 .projects-heading {
   font-size: 26px;
   letter-spacing: -0.14px;
   font-weight: 400;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .projects-grid {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  max-width: 700px;
+  gap: 50px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .project-card {
-  width: 190px;
-  height: 190px;
+  width: 280px;
+  height: 200px;
   position: relative;
 }
 
@@ -256,8 +257,8 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
   clip-path: url(#cloud-shape-1);
 }
 
@@ -267,11 +268,11 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60%;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  height: 70%;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
   pointer-events: none;
   clip-path: url(#cloud-shape-1);
 }
@@ -289,8 +290,8 @@ a {
 .project-label {
   position: relative;
   z-index: 1;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.5px;
 }
 
@@ -299,7 +300,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 60px 50px 40px;
+  padding: 100px 50px 50px;
   border-top: 1px solid #eee;
 }
 
@@ -361,19 +362,18 @@ a {
 .contact-cloud {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-60%, -45%);
-  width: 75%;
-  max-height: 90%;
+  left: 0;
+  transform: translate(-25%, -45%);
+  width: 130%;
   height: auto;
   pointer-events: none;
-  object-fit: contain;
 }
 
 .contact-email {
   position: relative;
   z-index: 1;
   font-size: 32px;
+  font-weight: 400;
   letter-spacing: -0.27px;
   color: #000;
 }
@@ -405,8 +405,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
-  padding: 60px 20px 100px;
+  gap: 80px;
+  padding: 80px 20px 120px;
 }
 
 .project-cover {
@@ -414,16 +414,16 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 400px;
+  height: 270px;
 }
 
 .project-cover-img {
   width: 100%;
   height: 100%;
   clip-path: url(#cloud-shape-1);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.2) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.2) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
 }
 
 .project-cover:nth-child(2) .project-cover-img {
@@ -523,10 +523,9 @@ a {
 
 @media (max-width: 768px) {
 
-  /* Rev 5: cloud bigger and lower on mobile */
   .hero {
     height: 420px;
-    margin-top: 20px;
+    margin-top: 60px;
   }
 
   .hero-cloud {
@@ -534,7 +533,6 @@ a {
     transform: translate(-50%, -42%);
   }
 
-  /* Rev 5: logo 30% smaller on mobile */
   .logo-img {
     width: 144px;
     height: 63px;
@@ -546,12 +544,17 @@ a {
   }
 
   .about {
-    padding: 120px 28px 30px;
+    padding: 160px 28px 60px;
+    max-width: 100%;
   }
 
-  /* Dream text mobile */
+  /* Dream text mobile — line 1 down 10%, line 2 up 15% */
   .dream-text {
-    padding: 30px 30px 20px;
+    padding: 60px 24px 40px;
+  }
+
+  .dream-line-1 {
+    margin-bottom: 100px;
   }
 
   .dream-line-1,
@@ -560,10 +563,14 @@ a {
   }
 
   .dream-cloud {
-    width: 320px;
+    width: 300px;
   }
 
-  /* Rev 6: 2 project cards side by side on mobile */
+  /* Project cards mobile */
+  .projects {
+    padding: 60px 20px 80px;
+  }
+
   .projects-grid {
     flex-wrap: nowrap;
     gap: 16px;
@@ -571,17 +578,17 @@ a {
   }
 
   .project-card {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 120px;
   }
 
   .project-card:nth-child(3) {
     display: none;
   }
 
-  /* Rev 7: mobile footer */
+  /* Mobile footer */
   .footer {
-    padding: 40px 24px 30px;
+    padding: 60px 24px 36px;
     align-items: flex-end;
   }
 
@@ -599,31 +606,36 @@ a {
     align-items: flex-end;
   }
 
-  /* Rev 4: Contact page mobile — cloud big, towards bottom */
+  /* Contact page mobile — cloud bigger, lower */
   .contact-page {
     top: 72px;
   }
 
   .contact-cloud {
-    width: 130%;
+    width: 160%;
     left: auto;
     top: auto;
-    bottom: 0;
-    transform: translate(-10%, 10%);
+    bottom: -5%;
+    transform: translate(-10%, 5%);
   }
 
   .contact-email {
     font-size: 20px;
   }
 
-  /* Clients mobile */
+  /* Clients mobile — breathing room */
   .clients {
-    padding: 15px 0 40px;
+    padding: 20px 24px 60px;
   }
 
   .clients-row {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 20px;
+    gap: 12px 24px;
+    padding: 0;
+  }
+
+  .client-logo {
+    height: 22px;
   }
 }
